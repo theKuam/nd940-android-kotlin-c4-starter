@@ -15,19 +15,57 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
+        android:layout_margin="@dimen/margin_normal"
         tools:context=".locationreminders.ReminderDescriptionActivity">
-        <!--TODO: add the design of the reminder details-->
 
         <TextView
+            android:id="@+id/txtTitleLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Reminder Details"
+            android:text="@string/reminder_title"
             android:textSize="@dimen/text_size_large"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{reminderDataItem.title}"
+            android:textSize="@dimen/text_size_medium"
+            android:layout_marginBottom="@dimen/margin_normal" />
+
+        <TextView
+            android:id="@+id/txtDescriptionLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reminder_desc"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/margin_normal" />
+
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{reminderDataItem.description}"
+            android:textSize="@dimen/text_size_medium"
+            android:layout_marginBottom="@dimen/margin_normal" />
+
+        <TextView
+            android:id="@+id/txtLocationLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reminder_location"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/margin_normal" />
+
+        <TextView
+            android:id="@+id/txtLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{@string/lat_long_snippet(reminderDataItem.latitude, reminderDataItem.longitude)}"
+            android:textSize="@dimen/text_size_medium" />
 
     </LinearLayout>
 </layout>
